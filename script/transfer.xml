@@ -1,0 +1,10 @@
+<project default="transfer SwfMasterPlugin.swf">
+	<target name="transfer SwfMasterPlugin.swf">
+		<echo>Current User: ${user.name}</echo>
+		<echo>Property file: "${basedir}/transter_${user.name}.properties</echo>
+		<property file="${basedir}/transfer_${user.name}.properties" />
+		<property name="targetDir" value="${targetJdtWorkspace}/com.powerflasher.fdt.ui.professional/masterSwf" />
+		<copy file="${basedir}/../bin/SwfMasterPlugin.swf" todir="${targetDir}" overwrite="true"/>		
+		<echo>SwfMasterPlugin.swf is written to ${targetDir}</echo>
+	</target>
+</project>

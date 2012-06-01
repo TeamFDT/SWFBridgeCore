@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project default="create-doc">
+	<fdt.loadProjectProperties />
+
+	<target name="create-doc">
+		<echo message="Generating docs" />
+		<exec executable="${FDTProjectSdkPath}/bin/asdoc" failonerror="true">
+			<arg line="-keep-xml" />
+			<arg line="-skip-xsl" />
+			<arg line="-source-path ${FDTProjectPath}/src" />
+			<arg line="-doc-sources ${FDTProjectPath}/src" />
+			<arg line="-output ${FDTProjectPath}/bin/docs" />
+		</exec>
+
+		<echo message="Updating swc" />
+		<unzip src="${FDTProjectPath}/bin/SwfPluginUtil.swc" dest="${FDTProjectPath}/bin/temp" />
+
+		<zip destfile="${FDTProjectPath}/bin/SwfPluginUtil-doc.swc" update="true">
+			<zipfileset dir="${FDTProjectPath}/bin/docs/tempdita" prefix="docs">
+				<include name="*.*" />
+				<exclude name="ASDoc_Config.xml" />
+				<exclude name="overviews.xml" />
+			</zipfileset>
+			<zipfileset dir="${FDTProjectPath}/bin/temp">
+				<include name="*.*" />
+			</zipfileset>
+		</zip>
+		<echo message="deleting temp directories"/>
+		<delete dir="${FDTProjectPath}/bin/docs" />
+		<delete dir="${FDTProjectPath}/bin/temp" />
+	</target>
+</project>

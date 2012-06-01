@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<launchConfiguration type="com.powerflasher.fdt.ui.CompcGroup">
+<stringAttribute key="ARGUMENTS" value=" -target-player={playerVersion}&#10; -keep-as3-metadata FdtSwfPlugin&#10;-include-sources+={project}/src&#10;-el+={flexSDK}/frameworks/libs/player/{playerVersion}/playerglobal.swc,&#10;-el+={flexSDK}/frameworks/libs/framework.swc,&#10;"/>
+<stringAttribute key="LAUNCHER_DEPENDENCIES" value="[Self]"/>
+<stringAttribute key="OUTPUT" value="bin/SwfPluginUtil.swc"/>
+<booleanAttribute key="PASS_CP" value="false"/>
+<booleanAttribute key="PASS_RSLS" value="false"/>
+<booleanAttribute key="PASS_SWCS" value="true"/>
+<stringAttribute key="PROJECT_NAME" value="contribution.com.powerflasher.fdt.ui.professional.swf.bridge"/>
+<listAttribute key="org.eclipse.debug.core.MAPPED_RESOURCE_PATHS">
+<listEntry value="/contribution.com.powerflasher.fdt.ui.professional.swf.bridge"/>
+</listAttribute>
+<listAttribute key="org.eclipse.debug.core.MAPPED_RESOURCE_TYPES">
+<listEntry value="4"/>
+</listAttribute>
+</launchConfiguration>
